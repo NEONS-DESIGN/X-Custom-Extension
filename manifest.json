@@ -1,0 +1,14 @@
+{
+	"manifest_version": 3,
+	"name": "Xカスタム拡張機能",
+	"version": "1.0",
+	"description": "X(旧Twitter)のユーザー画面に、メディア欄遷移ボタンを追加し、複数画像アイコンの視認性を改善します。",
+	"content_scripts": [
+		{
+			"matches": ["*://x.com/*", "*://twitter.com/*"],
+			"js": ["config.js", "content.js"],
+			"css": ["style.css"],
+			"run_at": "document_end"
+		}
+	]
+}

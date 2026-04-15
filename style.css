@@ -1,0 +1,44 @@
+/* メディアリンクボタンの基本スタイル */
+#ext-to-media-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 25px;
+    z-index: 9999;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 9999px;
+    border-color: rgb(75, 78, 82);
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px, rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+    transition: background-color 0.2s ease;
+}
+
+#ext-to-media-btn:hover {
+    background-color: rgba(29, 161, 242, 0.9);
+    /* Xのブランドカラーに近い色 */
+}
+
+#ext-to-media-btn.ext-hidden {
+    display: none !important;
+}
+
+/* 複数画像アイコンの背景色追加 */
+svg:has(path[d^="M2 8.5C2"]) {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border-radius: 4px;
+    /* padding: 2px; */
+    backdrop-filter: blur(2px);
+}
+
+/*
+ * 画面右下のGrokボタンおよびDM(メッセージ)ドロワーの非表示化
+ * XがUIテスト・管理用途で付与している data-testid をフックにして要素を隠蔽する。
+ * Grokボタンは親コンテナに余白が残るのを防ぐため :has() を使用して親ごと非表示にする。
+ */
+div:has(> div[data-testid="GrokDrawerHeader"]),
+div[data-testid="chat-drawer-main"] {
+    display: none !important;
+}
